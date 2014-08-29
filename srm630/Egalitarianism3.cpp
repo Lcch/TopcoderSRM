@@ -17,15 +17,15 @@ vector<vector<pair<int, int> > > gr(maxn);
 int ans;
 
 class Egalitarianism3 {
- public:
+public:
 	void dfs(int u, int fa, int len, vector<int>* dist) {
-    dist->push_back(len);
+		dist->push_back(len);
 		for (int t = 0; t != gr[u].size(); t++)
 			if (gr[u][t].first != fa)
 				dfs(gr[u][t].first, u, len + gr[u][t].second, dist);
 	}
 
-  int maxCities(int n, vector <int> a, vector <int> b, vector <int> len) {
+	int maxCities(int n, vector <int> a, vector <int> b, vector <int> len) {
 	  if (n <= 2) return n;
 		for (int i = 1; i <= n; i++) gr[i].clear();
 		for (int i = 0; i != n-1; i++) {
@@ -63,8 +63,8 @@ class Egalitarianism3 {
 		}
 		return ans;
 	}
-  
-// BEGIN CUT HERE
+
+	// BEGIN CUT HERE
 	public:
 	void run_test(int Case) { if ((Case == -1) || (Case == 0)) test_case_0(); if ((Case == -1) || (Case == 1)) test_case_1(); if ((Case == -1) || (Case == 2)) test_case_2(); if ((Case == -1) || (Case == 3)) test_case_3(); }
 	private:
