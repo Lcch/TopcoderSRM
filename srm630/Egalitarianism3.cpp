@@ -19,7 +19,7 @@ int ans;
 class Egalitarianism3 {
  public:
 	void dfs(int u, int fa, int len, vector<int>* dist) {
-		dist->push_back(len);
+    dist->push_back(len);
 		for (int t = 0; t != gr[u].size(); t++)
 			if (gr[u][t].first != fa)
 				dfs(gr[u][t].first, u, len + gr[u][t].second, dist);
